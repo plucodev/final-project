@@ -1,24 +1,34 @@
 import React from "react";
-import { Home } from "./component/views/home.jsx"
-import { Login } from "./component/views/login.jsx"
-import { Signup } from "./component/views/signup.jsx"
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./views/home.jsx";
+import HowItWorks from "./views/howItWorks.jsx";
+import Register from "./views/register.jsx";
+// import Login from "./views/login.jsx";
+// import Signup from "./views/signup.jsx";
 
-export class Layout extends Flux.View {
-    render() {
-        return (
-            <div>
-                <BrowserRouter>
-                    <div>
-                        <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route exact path="/home" component={Home} />
-                            <Route exact path="/log-in" component={Login} />
-                            <Route exact path="/sign-up" component={Signup} />
-                            
-                        </Switch>
-                    </div>
-                </BrowserRouter>
-            </div>
-        );
-    }
+export class Layout extends React.Component {
+	render() {
+		return (
+			<div>
+				<BrowserRouter>
+					<div>
+						<Switch>
+							<Route exact path="/" component={Home} />
+							<Route exact path="/home" component={Home} />
+							<Route
+								exact
+								path="/how-it-works"
+								component={HowItWorks}
+							/>
+							<Route
+								exact
+								path="/register"
+								component={Register}
+							/>
+						</Switch>
+					</div>
+				</BrowserRouter>
+			</div>
+		);
+	}
 }

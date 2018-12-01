@@ -2,9 +2,7 @@ import React from "react";
 import Navbar from "../component/Navbar.jsx";
 import Jumbo from "../component/Jumbotron.jsx";
 
-// import Footer from "../component/Footer.jsx";
-
-const Home = () => {
+const HowItWorks = () => {
 	return (
 		<div>
 			<Navbar />
@@ -13,4 +11,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default HowItWorks;

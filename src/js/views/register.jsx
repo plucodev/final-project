@@ -1,16 +1,15 @@
 import React from "react";
 import Navbar from "../component/Navbar.jsx";
 import Jumbo from "../component/Jumbotron.jsx";
+import RegisterPage from "../component/Register.jsx";
 
-// import Footer from "../component/Footer.jsx";
-
-const Home = () => {
+const Register = () => {
 	return (
 		<div>
 			<Navbar />
-			<Jumbo />
+			<RegisterPage />
 		</div>
 	);
 };
 
-export default Home;
+export default Register;
