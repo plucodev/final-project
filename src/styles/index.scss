@@ -14,3 +14,28 @@
 .registerContainer {
     background: #ecf8fa;
 }
+.registerImage img{
+    height: 256px;
+}
+button#button-searchProviders, #button-searchProcedures {
+    background: #50C57F;
+    border-color: #ffffff;
+    color:#ffffff;
+}
+// .searchBox{
+//     background:#D1FAE2;
+//     background-image: url("../img/search-background.png");
+// }
+// #pills-procedures-tab, #pills-providers-tab{
+//     background: #77DEA1;
+// }
+
+.input-search{
+    border-bottom-color: #ffffff;
+    border-top-color: #ffffff;
+}
+
+.image-home img {
+    height: 256px;
+}
+

@@ -47,7 +47,7 @@ const RegisterPage = () => {
 							</button>
 						</form>
 					</div>
-					<div className="h2 col-lg-6 text-center">
+					<div className="h2 col-lg-6 text-center registerImage">
 						<img src={rigoImage} />
 					</div>
 				</div>
