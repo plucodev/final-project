@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./views/home.jsx";
 import HowItWorks from "./views/howItWorks.jsx";
 import Register from "./views/register.jsx";
+
 // import Login from "./views/login.jsx";
 // import Signup from "./views/signup.jsx";
 
@@ -15,13 +16,7 @@ export class Layout extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route exact path="/home" component={Home} />
-							<Route exact path="/logout" component={Logout} />
-							<Route exact path="/login" component={Login} />
-							<Route exact path="/contact-us" component={ContactUs} />
-							<Route exact path="/checkout" component={Checkout} />
-							<Route exact path="/cart" component={Cart} />
-							<Route exact path="/products" component={Products} />
-							<Route exact path="/product/:theid" component={Product} />
+
 							<Route
 								exact
 								path="/how-it-works"
