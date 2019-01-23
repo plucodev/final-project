@@ -1,7 +1,32 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			products: [],
+			demo: [
+				{
+					title: "Blood Test",
+					price: "$ 99",
+					content:
+						"With supporting text below as a natural lead-in to additional content."
+				},
+				{
+					title: "Mammogram ",
+					price: "$ 120",
+					content:
+						"With supporting text below as a natural lead-in to additional content."
+				},
+				{
+					title: "MRI with Contrast",
+					price: "$ 120",
+					content:
+						"With supporting text below as a natural lead-in to additional content."
+				},
+				{
+					title: "Colonoscopy",
+					price: "$ 120",
+					content:
+						"With supporting text below as a natural lead-in to additional content."
+				}
+			],
 
 			cart: [
 				/*

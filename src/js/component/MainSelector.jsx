@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 
-class MainSelector extends React.Component {
+export class MainSelector extends React.Component {
 	render() {
 		return (
-			<div className="jumbotron mb-2">
+			<div className="jumbotron mb-2 mainselector">
 				<div className="container">
 					<div className="row">
 						<div className="col-md-12">
@@ -16,46 +16,26 @@ class MainSelector extends React.Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-md-12 my-3">
-							<ol className="list">
-								<li>Compare local prices</li>
-								<li>Save money</li>
-								<li>Buy your procedure</li>
-							</ol>
+						<div className="col-md-4 mb-5 text-center">
+							<div>
+								<i className="fas fa-thumbtack text-muted mr-3" />
+								Compare local prices
+							</div>
+						</div>
+						<div className="col-md-4 mb-5 text-center">
+							<div>
+								<i className="fas fa-hand-holding-usd text-muted mr-3" />
+								Save money
+							</div>
+						</div>
+						<div className="col-md-4 mb-5 text-center">
+							<div>
+								<i className="fas fa-shopping-cart text-muted mr-3" />
+								Buy your procedure
+							</div>
 						</div>
 					</div>
 
-					<ul
-						className="nav nav-pills mb-3 "
-						id="pills-tab"
-						role="tablist">
-						<li className="nav-item">
-							<a
-								className="nav-link active mr-2"
-								id="pills-procedures-tab"
-								data-toggle="pill"
-								href="#pills-home"
-								role="tab"
-								aria-controls="pills-home"
-								aria-selected="true">
-								<i className="fas fa-notes-medical mr-2" />
-								Find Procedures
-							</a>
-						</li>
-						<li className="nav-item">
-							<a
-								className="nav-link"
-								id="pills-providers-tab"
-								data-toggle="pill"
-								href="#pills-profile"
-								role="tab"
-								aria-controls="pills-profile"
-								aria-selected="false">
-								<i className="fas fa-user-md mr-2" />
-								Find Providers
-							</a>
-						</li>
-					</ul>
 					<div className="tab-content" id="pills-tabContent">
 						<div
 							className="tab-pane fade show active"
