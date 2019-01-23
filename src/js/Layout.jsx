@@ -3,24 +3,34 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./views/home.jsx";
 import Register from "./views/register.jsx";
 import Store from "./store/appContext.jsx";
+import How from "./views/how.jsx";
+import Procedures from "./views/procedures.jsx";
+import SignUp from "./views/signUp.jsx";
+import ScrollToTop from "./component/functional/scrollToTop.jsx";
+import Navbar from "./component/Navbar.jsx";
+import { Footer } from "./component/Footer.jsx";
 
 class Layout extends React.Component {
 	render() {
 		return (
 			<div>
 				<BrowserRouter>
-					<div>
+					<ScrollToTop>
+						<Navbar />
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route exact path="/home" component={Home} />
+							<Route exact path="/how-it-works" component={How} />
+							<Route exact path="/sign-up" component={SignUp} />
 
 							<Route
 								exact
-								path="/register"
-								component={Register}
+								path="/procedures"
+								component={Procedures}
 							/>
 						</Switch>
-					</div>
+						<Footer />
+					</ScrollToTop>
 				</BrowserRouter>
 			</div>
 		);

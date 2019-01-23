@@ -17,7 +17,7 @@
 .registerImage img{
     height: 256px;
 }
-button#button-searchProviders, #button-searchProcedures {
+button#button-searchProviders, #button-searchProcedures, .button-email{
     background: #17a2b8;
     border-color: #ffffff;
     color:#ffffff;
@@ -46,17 +46,44 @@ button#button-searchProviders, #button-searchProcedures {
 .footer {
   background: #343a40;
 }
-p.card-price {
+p.card-price, .signup_btn {
   font-size: 2rem;
 }
 .lead {
-  font-size: 1rem;
+  font-size: 1.0rem;
   font-weight: 300;
+  
+}
+.home-message{
+  background: #64ACAF;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 300;
+  // min-height: 10rem;
 }
 
-.howitworks {
+.howitworks, .jumbo-video {
   background: #ffffff;
 }
-.mainselector, .home-message {
+.mainselector, {
   background: #c7ecee;
 }
+
+.jumbo-footer, .signup_btn  {
+  color: #ffffff;
+}
+.social{
+  color:#c7ecee;
+}
+
+#headingTwo{
+  background: #c7ecee;
+}
+#headingOne{
+  background: #64ACAF;
+}
+.signup_btn{
+  text-decoration: none;
+  font-weight: 200;
+}
+Link:visited { text-decoration: none; }

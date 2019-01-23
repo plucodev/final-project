@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 export class MainSelector extends React.Component {
 	render() {
 		return (
-			<div className="jumbotron mb-2 mainselector">
+			<div className="jumbotron mb-0 mainselector">
 				<div className="container">
 					<div className="row">
 						<div className="col-md-12">
