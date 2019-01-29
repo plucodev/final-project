@@ -28,6 +28,8 @@ const getState = ({ getStore, setStore }) => {
 				}
 			],
 
+			contactList: [],
+
 			cart: [
 				/*
 				{

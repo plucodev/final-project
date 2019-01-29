@@ -48,6 +48,12 @@ const Navbar = () => {
 								Sign Up
 							</Link>
 						</li>
+						<li className="nav-item active">
+							<Link to="/cart" className="nav-link">
+								<i className="fas fa-shopping-cart" />
+							</Link>
+							<span className="sr-only" />
+						</li>
 					</ul>
 				</div>
 			</div>
