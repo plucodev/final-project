@@ -37,7 +37,7 @@ class SignUp extends React.Component {
 									className="collapse"
 									aria-labelledby="headingOne"
 									data-parent="#accordionExample">
-									<div className="card-body">
+									<div className="card-body register_form">
 										<main className="login-form">
 											<div className="cotainer">
 												<div className="row justify-content-center">
@@ -46,10 +46,27 @@ class SignUp extends React.Component {
 															<div className="card-header">
 																Register
 															</div>
-															<div className="card-body">
+															<div className="card-body register_form">
 																<form
 																	action=""
 																	method="">
+																	<div className="form-group row">
+																		<label
+																			htmlFor="username"
+																			className="col-md-4 col-form-label text-md-right">
+																			Username
+																		</label>
+																		<div className="col-md-6">
+																			<input
+																				type="text"
+																				id="username"
+																				className="form-control"
+																				name="username"
+																				required
+																				autoFocus
+																			/>
+																		</div>
+																	</div>
 																	<div className="form-group row">
 																		<label
 																			htmlFor="email_address"
@@ -86,34 +103,12 @@ class SignUp extends React.Component {
 																		</div>
 																	</div>
 
-																	<div className="form-group row">
-																		<div className="col-md-6 offset-md-4">
-																			<div className="checkbox">
-																				<label>
-																					<input
-																						type="checkbox"
-																						name="remember"
-																					/>{" "}
-																					Remember
-																					Me
-																				</label>
-																			</div>
-																		</div>
-																	</div>
-
 																	<div className="col-md-6 offset-md-4">
 																		<button
 																			type="submit"
-																			className="btn btn-primary">
+																			className="btn btn-info">
 																			Register
 																		</button>
-																		<a
-																			href="#"
-																			className="btn btn-link">
-																			Forgot
-																			Your
-																			Password?
-																		</a>
 																	</div>
 																</form>
 															</div>
@@ -146,7 +141,7 @@ class SignUp extends React.Component {
 									className="collapse"
 									aria-labelledby="headingTwo"
 									data-parent="#accordionExample">
-									<div className="card-body">
+									<div className="card-body register_form">
 										<main className="login-form">
 											<div className="cotainer">
 												<div className="row justify-content-center">
@@ -155,13 +150,13 @@ class SignUp extends React.Component {
 															<div className="card-header">
 																Register
 															</div>
-															<div className="card-body">
+															<div className="card-body register_form">
 																<form
 																	action=""
 																	method="">
 																	<div className="form-group row">
 																		<label
-																			htmlFor="email_address"
+																			htmlFor="useername_prov"
 																			className="col-md-4 col-form-label text-md-right">
 																			E-Mail
 																			Address
@@ -169,9 +164,27 @@ class SignUp extends React.Component {
 																		<div className="col-md-6">
 																			<input
 																				type="text"
-																				id="email_address"
+																				id="username_prov"
 																				className="form-control"
-																				name="email-address"
+																				name="username-prov"
+																				required
+																				autoFocus
+																			/>
+																		</div>
+																	</div>
+																	<div className="form-group row">
+																		<label
+																			htmlFor="email_address_prov"
+																			className="col-md-4 col-form-label text-md-right">
+																			E-Mail
+																			Address
+																		</label>
+																		<div className="col-md-6">
+																			<input
+																				type="text"
+																				id="email_address_prov"
+																				className="form-control"
+																				name="email-address-prov"
 																				required
 																				autoFocus
 																			/>
@@ -180,49 +193,27 @@ class SignUp extends React.Component {
 
 																	<div className="form-group row">
 																		<label
-																			htmlFor="password"
+																			htmlFor="password_prov"
 																			className="col-md-4 col-form-label text-md-right">
 																			Password
 																		</label>
 																		<div className="col-md-6">
 																			<input
 																				type="password"
-																				id="password"
+																				id="password_prov"
 																				className="form-control"
-																				name="password"
+																				name="password_prov"
 																				required
 																			/>
-																		</div>
-																	</div>
-
-																	<div className="form-group row">
-																		<div className="col-md-6 offset-md-4">
-																			<div className="checkbox">
-																				<label>
-																					<input
-																						type="checkbox"
-																						name="remember"
-																					/>{" "}
-																					Remember
-																					Me
-																				</label>
-																			</div>
 																		</div>
 																	</div>
 
 																	<div className="col-md-6 offset-md-4">
 																		<button
 																			type="submit"
-																			className="btn btn-primary">
+																			className="btn btn-info">
 																			Register
 																		</button>
-																		<a
-																			href="#"
-																			className="btn btn-link">
-																			Forgot
-																			Your
-																			Password?
-																		</a>
 																	</div>
 																</form>
 															</div>

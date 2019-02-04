@@ -29,6 +29,8 @@ const getState = ({ getStore, setStore }) => {
 			],
 
 			contactList: [],
+			procedures: [],
+			providers: [],
 
 			cart: [
 				/*
@@ -47,12 +49,16 @@ const getState = ({ getStore, setStore }) => {
 				{
 					email: "john@gmail.com",
 					password: "1234",
-					logStatus: false
+					logStatus: false,
+					is_student: true,
+					is_provider: false
 				},
 				{
 					email: "mark@gmail.com",
 					password: "5678",
-					logStatus: false
+					logStatus: false,
+					is_student: true,
+					is_provider: false
 				}
 			]
 		},
@@ -100,6 +106,16 @@ const getState = ({ getStore, setStore }) => {
 				setStore({ store: store });
 
 				history.push("/cart");
+			},
+
+			searchProcedures: searchInput => {
+				const store = getStore();
+
+				let procedureIndex = store.procedures.findIndex(x => {
+					return x.title === searchInput;
+				});
+
+				setStore({ store: store });
 			},
 
 			signInUserClick: (emailInput, passwordInput, history) => {

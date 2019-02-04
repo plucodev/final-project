@@ -7,9 +7,9 @@ const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div className="container">
-				<a className="navbar-brand" href="#">
+				<Link className="navbar-brand" to="/">
 					Final Project
-				</a>
+				</Link>
 				<button
 					className="navbar-toggler"
 					type="button"
@@ -24,24 +24,50 @@ const Navbar = () => {
 					className="collapse navbar-collapse justify-content-end"
 					id="navbarNav">
 					<ul className="navbar-nav ">
-						<li className="nav-item active">
-							<Link to="./home" className="nav-link" href="#">
+						{/*<li className="nav-item active">
+							<Link to="/home" className="nav-link" to="#">
 								Home
 								<span className="sr-only">(current)</span>
 							</Link>
-						</li>
+						</li>*/}
 						<li className="nav-item">
 							<Link to="./how-it-works" className="nav-link">
 								How It Works
 							</Link>
 						</li>
-						<li className="nav-item">
+
+						<li className="nav-item dropdown">
 							<Link
-								to="./procedures"
-								className="nav-link"
-								href="#">
+								className="nav-link dropdown-toggle"
+								to="#"
+								id="navbarDropdownProcedures"
+								role="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">
 								Procedures
 							</Link>
+							<div className="row">
+								<div className="col-sm-4">
+									<div className="dropdown-menu">
+										<h6 className="dropdown-header">
+											Top Procedures
+										</h6>
+										<a className="dropdown-item" href="#">
+											MRI
+										</a>
+										<a className="dropdown-item" href="#">
+											CT Scan
+										</a>
+										<a className="dropdown-item" href="#">
+											Lab Test
+										</a>
+										<a className="dropdown-item" href="#">
+											X-Ray
+										</a>
+									</div>
+								</div>
+							</div>
 						</li>
 
 						<li className="nav-item dropdown">
@@ -55,6 +81,7 @@ const Navbar = () => {
 								aria-expanded="false">
 								Log In / Sign In
 							</Link>
+
 							<div className="dropdown-menu">
 								<form className="px-4 py-3">
 									<div className="form-group">
@@ -177,3 +204,16 @@ export default Navbar;
 // 								</form>
 // 							</div>
 // 						</li>
+// <li class="dropdown">
+// 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Three Column <b class="caret"></b></a>
+// 	            <ul class="dropdown-menu multi-column columns-3">
+// 		            <div class="row">
+// 			            <div class="col-sm-4">
+// 				            <ul class="multi-column-dropdown">
+// 					            <li><a href="#">Action</a></li>
+// 					            <li><a href="#">Another action</a></li>
+// 					            <li><a href="#">Something else here</a></li>
+// 					            <li class="divider"></li>
+// 					            <li><a href="#">Separated link</a></li>
+// 					            <li class="divider"></li>
+// 					            <li><a href="#">One more separated link</a></li>

@@ -21,11 +21,14 @@ const Store = PassedComponent => {
 			// this function is the equivalent to "window.onLoad"
 			// it only run once on the entire application lifetime
 			// you should do your ajax requests here
-			fetch("https://api-project-plucodel.c9users.io/api/contacts/")
+
+			fetch(
+				"https://final-project-backend-plucodel.c9users.io/api/procedures/"
+			)
 				.then(response => response.json())
 				.then(data => {
 					let { store } = this.state;
-					store.contactList = data;
+					store.procedures = data;
 					this.setState({ store });
 				});
 		}

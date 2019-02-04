@@ -86,4 +86,25 @@ p.card-price, .signup_btn {
   text-decoration: none;
   font-weight: 200;
 }
-Link:visited { text-decoration: none; }
+.dropdown-header, .proc_name{
+  color: #64ACAF;
+}
+
+.proc_card {
+  border-radius: 5px;
+  border-color: #c7ecee;
+}
+
+.proc_price {
+  border: 1px solid orange;
+  border-radius: 5px;
+  height: 100%;
+  
+}
+
+button.btn.btn-link.signup_btn {
+    text-decoration: none;
+}
+.register_form {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
