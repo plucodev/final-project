@@ -26,7 +26,7 @@ const Home = () => {
 					<div className="embed-responsive embed-responsive-16by9">
 						<iframe
 							className="embed-responsive-item"
-							src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+							src="https://www.youtube.com/embed/Ulp5xtbIuV0"
 							allowFullScreen
 						/>
 					</div>

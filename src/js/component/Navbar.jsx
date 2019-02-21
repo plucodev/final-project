@@ -1,14 +1,17 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { Context } from "../store/appContext.jsx";
 // import Home from "../views/home.jsx";
 // import HowItWorks from "../views/howItWorks.jsx";
+import spain from "../../img/spain.png";
+import PropTypes from "prop-types";
 
 const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div className="container">
 				<Link className="navbar-brand" to="/">
-					Final Project
+					APOYO
 				</Link>
 				<button
 					className="navbar-toggler"
@@ -45,100 +48,150 @@ const Navbar = () => {
 								data-toggle="dropdown"
 								aria-haspopup="true"
 								aria-expanded="false">
-								Procedures
+								Welcome Paolo
 							</Link>
 							<div className="row">
 								<div className="col-sm-4">
 									<div className="dropdown-menu">
 										<h6 className="dropdown-header">
-											Top Procedures
+											Your Profile
 										</h6>
-										<a className="dropdown-item" href="#">
-											MRI
-										</a>
-										<a className="dropdown-item" href="#">
-											CT Scan
-										</a>
-										<a className="dropdown-item" href="#">
-											Lab Test
-										</a>
-										<a className="dropdown-item" href="#">
-											X-Ray
-										</a>
+										<Link
+											to="/dashboard"
+											className="dropdown-item">
+											Dashboard
+										</Link>
+										<div className="dropdown-divider" />
+										<Link to="#" className="dropdown-item">
+											Logout
+										</Link>
 									</div>
 								</div>
 							</div>
 						</li>
+						{/*<Context.Consumer>
+							{({ store, actions }) => {
+								return (
+									<li className="nav-item dropdown">
+										<Link
+											className="nav-link dropdown-toggle"
+											to="#"
+											id="navbarDropdown"
+											role="button"
+											data-toggle="dropdown"
+											aria-haspopup="true"
+											aria-expanded="false">
+											Log In / Sign In
+										</Link>
 
-						<li className="nav-item dropdown">
-							<Link
-								className="nav-link dropdown-toggle"
-								to="#"
-								id="navbarDropdown"
-								role="button"
-								data-toggle="dropdown"
-								aria-haspopup="true"
-								aria-expanded="false">
-								Log In / Sign In
-							</Link>
-
-							<div className="dropdown-menu">
-								<form className="px-4 py-3">
-									<div className="form-group">
-										<label htmlFor="exampleDropdownFormEmail1">
-											Email address
-										</label>
-										<input
-											type="email"
-											className="form-control"
-											id="exampleDropdownFormEmail1"
-											placeholder="email@example.com"
-										/>
-									</div>
-									<div className="form-group">
-										<label htmlFor="exampleDropdownFormPassword1">
-											Password
-										</label>
-										<input
-											type="password"
-											className="form-control"
-											id="exampleDropdownFormPassword1"
-											placeholder="Password"
-										/>
-									</div>
-									<div className="form-group">
-										<div className="form-check">
-											<input
-												type="checkbox"
-												className="form-check-input"
-												id="dropdownCheck"
-											/>
-											<label
-												className="form-check-label"
-												htmlFor="dropdownCheck">
-												Remember me
-											</label>
+										<div className="dropdown-menu">
+											<form className="px-4 py-3">
+												<div className="form-group">
+													<label htmlFor="exampleDropdownFormEmail1">
+														Email address
+													</label>
+													<input
+														type="email"
+														className="form-control"
+														id="exampleDropdownFormEmail1"
+														placeholder="email@example.com"
+														name="email"
+													/>
+												</div>
+												<div className="form-group">
+													<label htmlFor="exampleDropdownFormPassword1">
+														Password
+													</label>
+													<input
+														type="password"
+														className="form-control"
+														id="exampleDropdownFormPassword1"
+														placeholder="Password"
+														name="password"
+													/>
+												</div>
+												<div className="form-group">
+													<div className="form-check">
+														<input
+															type="checkbox"
+															className="form-check-input"
+															id="dropdownCheck"
+														/>
+														<label
+															className="form-check-label"
+															htmlFor="dropdownCheck">
+															Remember me
+														</label>
+													</div>
+												</div>
+												<button
+													type="submit"
+													className="btn btn-info"
+													onClick={() =>
+														actions.signInUserClick(
+															document.querySelector(
+																"[name=email]"
+															).value,
+															document.querySelector(
+																"[name=password]"
+															).value,
+															this.props.history
+														)
+													}>
+													Log In
+												</button>
+											</form>
+											<div className="dropdown-divider" />
+											<Link
+												className="dropdown-item"
+												to="/sign-up">
+												New around here? Sign up
+											</Link>
+											<Link
+												className="dropdown-item"
+												to="#">
+												Forgot password?
+											</Link>
 										</div>
-									</div>
-									<button
-										type="submit"
-										className="btn btn-info">
-										Log In
-									</button>
-								</form>
-								<div className="dropdown-divider" />
-								<Link className="dropdown-item" to="/sign-up">
-									New around here? Sign up
-								</Link>
-								<Link className="dropdown-item" to="#">
-									Forgot password?
-								</Link>
-							</div>
-						</li>
+									</li>
+								);
+							}}
+						</Context.Consumer>*/}
 
 						<li className="nav-item active">
 							<Link to="/cart" className="nav-link">
 								<i className="fab fa-opencart" />
+							</Link>
+							<span className="sr-only" />
+						</li>
+						<Context.Consumer>
+							{({ store, actions }) => {
+								let cartTotal = 0;
+								store.cart.forEach((item, index, history) => {
+									let product = store.procedures_test.find(
+										products => {
+											return (
+												products.CPT_Code ===
+												item.CPT_Code
+											);
+										}
+									);
+
+									cartTotal += product.price;
+								});
+								return (
+									<div className="text-wrap">
+										<span className="small badge badge-success">
+											{"$ " + cartTotal}
+										</span>
+									</div>
+								);
+							}}
+						</Context.Consumer>
+
+						<li className="nav-item active">
+							<Link to="/cart" className="nav-link" id="flag">
+								<img src={spain} alt="..." className="img" />
 							</Link>
 							<span className="sr-only" />
 						</li>
@@ -148,7 +201,9 @@ const Navbar = () => {
 		</nav>
 	);
 };
-
+Navbar.propTypes = {
+	history: PropTypes.object
+};
 export default Navbar;
 
 // <li className="nav-item dropdown">

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 import "../../styles/cart.css";
 import PropTypes from "prop-types";
+import { price } from "../component/functional/price.jsx";
 
 // import { price } from "../component/functional/price.jsx";
 
@@ -27,12 +28,19 @@ export class CartItem extends React.Component {
 				<div className="row">
 					<Context.Consumer>
 						{({ store, actions }) => {
-							let product = store.products.find(products => {
-								return products.sku === this.props.sku;
-							});
+							{
+								/*let product = store.procedures_test.find(
+								products => {
+									return (
+										products.CPT_Code ===
+										this.props.CPT_Code
+									);
+								}
+							);*/
+							}
 							return (
 								<React.Fragment>
-									<div className="col-12 col-sm-12 col-md-2 text-center">
+									{/*<div className="col-12 col-sm-12 col-md-2 text-center">
 										<img
 											className="img-responsive"
 											src={product.image}
@@ -40,10 +48,15 @@ export class CartItem extends React.Component {
 											width="120"
 											height="80"
 										/>
-									</div>
+									</div>*/}
 									<div className="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
 										<h4 className="product-name">
-											<strong>{product.name}</strong>
+											<strong>
+												{
+													store.procedures_test[0]
+														.procedureName
+												}
+											</strong>
 										</h4>
 										<h4>
 											<small>Product description</small>
@@ -53,7 +66,9 @@ export class CartItem extends React.Component {
 										<div className="col-3 col-sm-3 col-md-6 text-md-right padding-top-5">
 											<h6>
 												<strong>
-													{/*{price(product.price)}{" "}*/}
+													{"$ " +
+														store.procedures_test[0]
+															.price}{" "}
 													<span className="text-muted">
 														x
 													</span>
@@ -68,7 +83,7 @@ export class CartItem extends React.Component {
 													className="plus"
 													onClick={() =>
 														actions.updateQuantity(
-															this.props.sku,
+															this.props.CPT_Code,
 															"add",
 															this.props.history
 														)
@@ -80,7 +95,7 @@ export class CartItem extends React.Component {
 													step="1"
 													max="99"
 													min="1"
-													value={this.props.quantity}
+													// value={this.props.quantity}
 													title="Qty"
 													className="qty"
 													size="4"
@@ -91,7 +106,7 @@ export class CartItem extends React.Component {
 													className="minus"
 													onClick={() =>
 														actions.updateQuantity(
-															this.props.sku,
+															this.props.CPT_Code,
 															"minus",
 															this.props.history
 														)
@@ -129,7 +144,7 @@ export class CartItem extends React.Component {
 }
 
 CartItem.propTypes = {
-	sku: PropTypes.string,
+	CPT_Code: PropTypes.string,
 	quantity: PropTypes.number,
 	history: PropTypes.object,
 	index: PropTypes.number

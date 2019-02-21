@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 export class Footer extends Component {
 	render() {
 		return (
@@ -8,27 +8,23 @@ export class Footer extends Component {
 					<div className="row text-center">
 						<div className="col-md-3">
 							<a className="navbar-brand" href="#">
-								Final Project
+								APOYO
 							</a>
 						</div>
 						<div className="col-md-3">
 							<nav className="nav flex-column">
-								<a className="nav-link" href="#">
+								<Link className="nav-link" to="/how-it-works">
 									About Us
-								</a>
-								<a className="nav-link" href="#">
+								</Link>
+								<Link className="nav-link" to="/contact-us">
 									Contact Us
-								</a>
+								</Link>
 								<a className="nav-link" href="#">
 									FAQs
 								</a>
-								<a
-									className="nav-link"
-									href="#"
-									tabIndex="-1"
-									aria-disabled="true">
+								<Link className="nav-link" to="/procedures">
 									Procedures
-								</a>
+								</Link>
 							</nav>
 						</div>
 

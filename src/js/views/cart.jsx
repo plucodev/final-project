@@ -11,7 +11,7 @@ import { withRouter } from "react-router-dom";
 export class Cart extends React.Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container my-5">
 				<div className="card shopping-cart">
 					<div className="card-header bg-dark text-light">
 						<i className="fa fa-shopping-cart" aria-hidden="true" />
@@ -31,9 +31,9 @@ export class Cart extends React.Component {
 									return (
 										<CartItem
 											index={index}
-											sku={item.sku}
+											CPT_Code={item.CPT_Code}
 											key={index}
-											quantity={item.quantity}
+											// quantity={item.quantity}
 											history={this.props.history}
 										/>
 									);
@@ -85,8 +85,8 @@ export class Cart extends React.Component {
 											let product = store.products.find(
 												products => {
 													return (
-														products.sku ===
-														item.sku
+														products.CPT_Code ===
+														item.CPT_Code
 													);
 												}
 											);
@@ -96,12 +96,25 @@ export class Cart extends React.Component {
 									);
 									return (
 										<div className="pull-right margin-5">
-											Total price:{" "}
-											<b>{price(cartTotal)}</b>
+											Total price: <b>{cartTotal}</b>
 										</div>
 									);
 								}}
 							</Context.Consumer>*/}
+							<Context.Consumer>
+								{({ store, actions }) => {
+									return (
+										<div className="pull-right margin-5">
+											Total price:{" "}
+											<b>
+												{"$ " +
+													store.procedures_test[0]
+														.price}
+											</b>
+										</div>
+									);
+								}}
+							</Context.Consumer>
 						</div>
 					</div>
 				</div>

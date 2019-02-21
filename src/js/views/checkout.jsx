@@ -14,7 +14,7 @@ export class Checkout extends React.Component {
 	}
 	render() {
 		return (
-			<div className="container mt-2">
+			<div className="container my-5">
 				<div className="row">
 					<div className="col-md-4 order-md-2 mb-4">
 						<h4 className="d-flex justify-content-between align-items-center mb-3">
@@ -36,9 +36,10 @@ export class Checkout extends React.Component {
 									return store.cart.map((item, index) => {
 										return (
 											<CheckoutCart
-												sku={item.sku}
+												index={index}
+												CPT_Code={item.CPT_Code}
 												key={index}
-												quantity={item.quantity}
+												// quantity={item.quantity}
 												history={this.props.history}
 											/>
 										);
@@ -46,7 +47,7 @@ export class Checkout extends React.Component {
 								}}
 							</Context.Consumer>
 
-							<Context.Consumer>
+							{/*<Context.Consumer>
 								{({ store, actions }) => {
 									let cartTotal = 0;
 									store.cart.forEach(
@@ -70,7 +71,7 @@ export class Checkout extends React.Component {
 										</li>
 									);
 								}}
-							</Context.Consumer>
+							</Context.Consumer>*/}
 						</ul>
 					</div>
 

@@ -3,8 +3,9 @@ import { withRouter } from "react-router-dom";
 import shopping from "../../img/surgeon.png";
 import doctor from "../../img/doctor.png";
 import visit from "../../img/medical-history.png";
+import { Link } from "react-router-dom";
 
-export class HowItWorks extends Component {
+class HowItWorks extends Component {
 	render() {
 		return (
 			<div className="jumbotron jumbotron-fluid mb-0 mt-2 howitworks pt-0">
@@ -52,11 +53,13 @@ export class HowItWorks extends Component {
 					</div>
 					<div className="row mt-4">
 						<div className="col-md-12">
-							<button
-								type="button"
-								className="btn btn-outline-info">
-								Learn More
-							</button>
+							<Link to="./sign-up" className="nav-link">
+								<button
+									type="button"
+									className="btn btn-outline-info">
+									Register Now
+								</button>
+							</Link>
 						</div>
 					</div>
 				</div>

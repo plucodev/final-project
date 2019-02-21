@@ -21,8 +21,8 @@ class Dashboard extends Component {
 										</span>
 									</a>
 								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="#">
+								<li className="nav-item ">
+									<a className="nav-link active" href="#">
 										<span data-feather="file" />
 										Orders
 									</a>
@@ -30,19 +30,19 @@ class Dashboard extends Component {
 								<li className="nav-item">
 									<a className="nav-link" href="#">
 										<span data-feather="shopping-cart" />
-										Products
+										Procedures
 									</a>
 								</li>
 								<li className="nav-item">
 									<a className="nav-link" href="#">
 										<span data-feather="users" />
-										Customers
+										Patients
 									</a>
 								</li>
 								<li className="nav-item">
 									<a className="nav-link" href="#">
 										<span data-feather="bar-chart-2" />
-										Reports
+										Locations
 									</a>
 								</li>
 								<li className="nav-item">
@@ -53,7 +53,7 @@ class Dashboard extends Component {
 								</li>
 							</ul>
 
-							<h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+							<h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 border rounded border-info">
 								<span>Saved reports</span>
 								<a
 									className="d-flex align-items-center text-muted"
@@ -111,14 +111,14 @@ class Dashboard extends Component {
 							</div>
 						</div>
 
-						<canvas
+						{/*<canvas
 							className="my-4 w-100"
 							id="myChart"
 							width="900"
 							height="380"
-						/>
+						/>*/}
 
-						<h2>Section title</h2>
+						<h2>Orders</h2>
 						<div className="table-responsive">
 							<table className="table table-striped table-sm">
 								<thead>
